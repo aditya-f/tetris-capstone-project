@@ -67,7 +67,7 @@ df_['Jumlah Penduduk'] = df_['Jumlah Penduduk'].astype(int)
 df_['Jumlah Penduduk Miskin'] = df_['Jumlah Penduduk Miskin'].astype(int)
 df_['Upah Minimum Provinsi'] = df_['Upah Minimum Provinsi'].astype(int)
 
-fig = px.bar(df_, x="Provinsi", y="Tingkat Kriminalitas", barmode="group")
+fig = px.bar(df_.sort_values('Tingkat Kriminalitas', ascending=False), x="Provinsi", y="Tingkat Kriminalitas", barmode="group")
 st.plotly_chart(fig, use_container_width=True)
 
 st.subheader("Peta Distribusi Tingkat Kriminalitas per Provinsi")
