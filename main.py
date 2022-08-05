@@ -57,8 +57,10 @@ df_ = df.rename(columns={
     "tingkat_pengangguran": "Tingkat Pengangguran",
     "umr": "Upah Minimum Provinsi",
     "lama_sekolah": "Rerata Lama Sekolah",
+    "jumlah_penduduk": "Jumlah Penduduk",
     "jumlah_penduduk_miskin": "Jumlah Penduduk Miskin",
     })
+    
 df_.drop(['longitude', 'latitude'], inplace=True, axis=1)
 df_['Tingkat Kriminalitas'] = df_['Tingkat Kriminalitas'].astype(int)
 df_['Jumlah Penduduk'] = df_['Jumlah Penduduk'].astype(int)
@@ -139,10 +141,8 @@ teks, tabel = st.columns(2)
 with teks:
     st.write("""
     Dapat disimpulkan bahwa dari empat variabel yang digunakan, hanya variabel tingkat pengangguran yang kurang berkorelasi dengan tingkat kriminalitas.
-
     Namun, berbeda dengan hipotesis awal, semakin tinggi rerata lama sekolah dan upah minimum, tingkat kriminalitas tidak menurun.
     Jumlah penduduk miskin yang rendah pun tidak membuat suatu daerah memiliki tingkat kriminalitas yang rendah.
-
     Oleh karena itu, untuk memprediksi tingkat kriminalitas suatu daerah tidak cukup hanya dengan menggunakan variabel ekonomi dan pendidikan.
     Diperlukan penelitian lebih lanjut mengenai perilaku masyarakat, psikologis masyarakat, budaya, dan berbagai macam aspek lainnya
     untuk kemudian dapat ditentukan faktor-faktor utama terjadinya kriminalitas.
