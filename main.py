@@ -61,8 +61,9 @@ df_ = df.rename(columns={
     })
 df_.drop(['longitude', 'latitude'], inplace=True, axis=1)
 df_['Tingkat Kriminalitas'] = df_['Tingkat Kriminalitas'].astype(int)
-df_['Tingkat Kriminalitas'] = df_['Tingkat Kriminalitas'].astype(int)
-
+df_['Jumlah Penduduk'] = df_['Jumlah Penduduk'].astype(int)
+df_['Jumlah Penduduk Miskin'] = df_['Jumlah Penduduk Miskin'].astype(int)
+df_['Upah Minimum Provinsi'] = df_['Upah Minimum Provinsi'].astype(int)
 
 fig = px.bar(df_, x="Provinsi", y="Tingkat Kriminalitas", barmode="group")
 st.plotly_chart(fig, use_container_width=True)
